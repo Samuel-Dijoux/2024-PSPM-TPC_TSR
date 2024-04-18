@@ -19,9 +19,7 @@ David S. Boukal (dboukal@prf.jcu.cz).
 
 Responsible of the repository: Samuel Dijoux.
 
-## Cite the code:
-
-[Badge DOI coming soon]
+## Cite the code: [![DOI](https://zenodo.org/badge/788494888.svg)](https://zenodo.org/doi/10.5281/zenodo.10993083)
 
 ## Brief summary of the study
 
