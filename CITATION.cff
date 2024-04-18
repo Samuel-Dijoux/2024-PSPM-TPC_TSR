@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it using these metadata.
+title: "2024-PSPM-TPC_TSR"
+authors:
+  - family-names: "Dijoux"
+    given-names: "Samuel"
+    orcid: "https://orcid.org/0000-0002-8086-7696"
+  - family-names: "Smal\xE5s"
+    given-names: "Aslak"
+    orcid: "https://orcid.org/0000-0002-6316-2811"
+  - family-names: "Primicerio"
+    given-names: "Raul"
+    orcid: "https://orcid.org/0000-0002-1287-0164"
+  - family-names: "Boukal"
+    given-names: "David"
+    orcid: "https://orcid.org/0000-0001-8181-7458"
+version: v1.0
+date-released: "2024-04-18"
+doi: 10.5281/zenodo.10993084
+url: "https://doi.org/10.5281/zenodo.10993084"
+license: cc-by-4.0
