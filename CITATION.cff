@@ -1,6 +1,7 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
-title: "2024-PSPM-TPC_TSR"
+title: "Code: Tri-trophic community responses to temperature-dependent vital rates, thermal niche (mis)matches and temperature-size rule"
+version: v1.0
 authors:
   - family-names: "Dijoux"
     given-names: "Samuel"
@@ -19,3 +20,4 @@ date-released: "2024-04-18"
 doi: 10.5281/zenodo.10993084
 url: "https://doi.org/10.5281/zenodo.10993084"
 license: cc-by-4.0
+repository-code: https://github.com/Samuel-Dijoux/2024-PSPM-TPC_TSR/tree/v1.0
