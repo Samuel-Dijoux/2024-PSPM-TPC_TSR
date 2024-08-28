@@ -11,8 +11,6 @@ Manuscript submitted for publication.
 
 Preprint version available on: [Authorea](https://www.authorea.com/users/381268/articles/1212671-tri-trophic-community-responses-to-temperature-dependent-vital-rates-thermal-niche-mismatches-and-temperature-size-rule)
 
-Cite the code: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13382965.svg)](https://doi.org/10.5281/zenodo.13382965)
-
 ## Authors & Contact details:  
 Samuel Dijoux (dijoux.samuel@gmail.com),  
 Aslak Smalås (aslak.smalas@skandnat.no),  
@@ -21,7 +19,7 @@ David S. Boukal (dboukal@prf.jcu.cz).
 
 Responsible of the repository: Samuel Dijoux.
 
-## Cite the code: [![DOI](https://zenodo.org/badge/788494888.svg)](https://zenodo.org/doi/10.5281/zenodo.10993083)
+Cite the code: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13382965.svg)](https://doi.org/10.5281/zenodo.13382965)
 
 ## Brief summary of the study
 
