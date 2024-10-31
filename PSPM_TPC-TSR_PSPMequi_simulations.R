@@ -15,7 +15,7 @@
 #   TPC implemented in consumer birth, growth, ingestion and mortality rates, 
 #       in Predator functional response  and biomass loss rate
 ####################################################################################################
-# library(PSPManalysis);
+library(PSPManalysis);
 load("PSPM_TPC-TSR_PSPMequi_data.Rdata")
 
 modelname = "PSPM_TPC-TSR_model.R" # Baseline model for scenarios 1-10 (Sections 1-3)
@@ -510,11 +510,11 @@ lines(log10(BPcurve[,1])~BPcurve[,6], type="l", lwd=2, lty=3);
 lines(log10(BPEcurve[,1])~BPEcurve[,6], type="l", lwd=2, lty=1);
 lines(log10(LPcurve[,1])~LPcurve[,6], type="l", lwd=2, lty=2);
 
-############ Section 3: TPC+TSR only (S3) ====
+############ Section 3: TPC+TSR (S3) ====
 # 3*3 combinations of TPC x TSR implemented in consumer only, predator only, and both consumer & predator:
 # S3A-C) TPC(C)+ A) TSR(C), B) TSR(P), C) TSR(C+P)
-# S3D-F) TPC(P)+ A) TSR(C), B) TSR(P), C) TSR(C+P)
-# S3G-I) TPC(C+P)+ A) TSR(C), B) TSR(P), C) TSR(C+P)
+# S3D-F) TPC(P)+ D) TSR(C), E) TSR(P), F) TSR(C+P)
+# S3G-I) TPC(C+P)+ G) TSR(C), H) TSR(P), I) TSR(C+P)
 ## Community transition along productivity gradient ====
 R_K <- PSPMequi(modelname, "EQ", c(1.0E-06, 1.0E-06), 0.1, c(1, 0, 5E-5), NULL,
                 options = c("popZE", "0", "envZE", "1", "envZE", "2"), clean = TRUE, force=TRUE);
@@ -831,10 +831,12 @@ lines(log10(BPEcurve[,1])~BPEcurve[,6], type="l", lwd=2, lty=1);
 lines(log10(LPcurve[,1])~LPcurve[,6], type="l", lwd=2, lty=2);
 
 ############ Section 4: TPC+TSR implementing species thermal (mis)match (S4) ====
-# S4A-C) Thermal niche shift of consumer relative to predator; TSR(C+P) + A: TPC(C), B: TPC(P), C: TPC(C+P)
-# S4D-F) Thermal niche shift of predator relative to consumer; TSR(C+P) + D: TPC(C), E: TPC(P), F: TPC(C+P)
+# S4A-C) Thermal niche shift of consumer relative to predator; TSR(C+P) + TPC(P) + shift of TPC(C): A) at 20°C C) at 13°C
+# S4B-D) Thermal niche shift of predator relative to consumer; TSR(C+P) + TPC(C) + shift of TPC(P): B) at 20°C C) at 13°C
 
-# Note that the environmental temperature is kept at 20°C and the thermal niche of the focal species is kept identical at in the previous scenario (~5-25°C, optimum at 20°C)
+# Note that the thermal niche of the focal species is kept identical as in previous scenario (~5-25°C, optimum at 20°C), while we change 
+# 1) the environmental temperature, thus affecting its performance rates: at 20°C (optimal performances for focal species) and 13°C (inducing lower performance rates),
+# and 2) the thermal niche of the second species by changing Tmin, Tmax and Topt regarding to Delta TPC. 
 # Delta TPC < 0 => Cold-adapted species relative to the focal species
 # Delta TPC > 0 => Warm-adapted species relative to the focal species
 

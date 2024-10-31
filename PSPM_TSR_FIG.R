@@ -78,6 +78,7 @@ lines(FRT~TT, lwd=2);
 lines(XT~TT, lwd=2);
 segments(20, 0, 20, max(FRT, na.rm=T), lwd=1, lty=3); 
 
+dev.off()
 ########## Fig.2 - TPC * TSR combinations on trophic chain structure ====
 # a-c) Temperature-dependent functions in Consumer only: TPC, TSR, TPC+TSR
 # d-f) Temperature-dependent functions in Predator only: TPC, TSR, TPC+TSR
@@ -136,13 +137,16 @@ Graph(BP=S2G_KT_BP, BPE=S2G_KT_BPE, LP=S2G_KT_LP, XX=0, YY=0, ZZ=0, TCOL=6);
 par(mfg=c(3,3), mar = c(3, 2.5, 1.5, 3));
 Graph(BP=S3I_KT_BP, BPE=S3I_KT_BPE, LP=S3I_KT_LP, XX=1, YY=0, ZZ=0, TCOL=6);
 
+dev.off()
 ########## Fig.3 - Species Thermal mismatch between species ====
 Tvec <- c(rep("13", 3),rep("20",3));
 Nich <- c(rep("belowNiche",3),rep("Niche",3),rep("aboveNiche",3));
 par(mfg=c(1,1), mar = c(3, 1.5, 3, 2));
 Cold <- c(2, 20, 8)
 Warm <- c(10, 20, 0)
+
 barplot(as.matrix( cbind.data.frame( Cold, Warm)), col=c("grey", "#67a9cf", "grey", "grey", "#d8b365", "grey"), horiz=T, axes=F)
+dev.off()
 # -15; -12; 8 # 
 # -15; -5; 35 # 0-15-35 
 # Focal species is Predator
@@ -190,8 +194,10 @@ lines(log10(S4D_TM_LP[,1])~S4D_TM_LP[,6], type="l", lwd=2, lty=2, col="#67a9cf")
 abline(v=0, lwd=2, lty=4);
 segments(min(S4D_TM_BPE[,6]), max(log10(S4D_TM_LP[,1])), min(S4D_TM_BPE[,6]), log10(1E-3), lwd=2, lty=1, col="#67a9cf")
 
-### T=13degC, removed from the figure ====
-par(mfg=c(2,1), mar = c(4, 4, 1, 2.5));
+dev.off()
+
+### T=13degC, not selected for the main figures ====
+#par(mfg=c(2,1), mar = c(4, 4, 1, 2.5));
 plot("", type="l", lwd=2, xlab="", ylab="", xaxs="i",yaxs="i", xaxt="n", yaxt="n", xlim=c(-15,15), ylim=c(log10(1.7E-6), log10(1E-3)));
 axis(1, at=c(-10,0,10), label=T, las=1, cex.axis=1.8); axis(1, at=seq(-20,20, by=5), label=F, las=1, cex.axis=1.8);
 axis(2, at=log10(c(1E-5, 1E-4)), label=F, las=2, cex.axis=1.8);
@@ -209,9 +215,9 @@ abline(v=0, lwd=2, lty=4);
 abline(h=log10(S4D_TM_BP[1]), type="l", lwd=2, lty=3, col="darkblue");
 lines(log10(S4D_TM_BPE[,1])~S4D_TM_BPE[,6], type="l", lwd=2, lty=1, col="darkblue");
 lines(log10(S4D_TM_LP[,1])~S4D_TM_LP[,6], type="l", lwd=2, lty=2, col="darkblue");
-
-### T=20degC, removed from the figure ====
-par(mfg=c(2,2), mar = c(4, 2.5, 1, 4));
+dev.off()
+### T=20degC, not selected for the main figures ====
+#par(mfg=c(2,2), mar = c(4, 2.5, 1, 4));
 
 plot("", type="l", lwd=2, xlab="", ylab="", xaxs="i",yaxs="i", xaxt="n", yaxt="n", xlim=c(-15,15), ylim=c(log10(1.7E-6), log10(1E-3)));
 axis(1, at=c(-10,0,10), label=T, las=1, cex.axis=1.8); axis(1, at=seq(-20,20, by=5), label=F, las=1, cex.axis=1.8);
@@ -227,6 +233,7 @@ abline(h=log10(S4B_TM_BP[1]), type="l", lwd=2, lty=3, col="darkorange");
 lines(log10(S4B_TM_BPE[,1])~S4B_TM_BPE[,6], type="l", lwd=2, lty=1, col="darkorange");
 lines(log10(S4B_TM_LP[,1])~S4B_TM_LP[,6], type="l", lwd=2, lty=2, col="darkorange");
 abline(v=0, lwd=2, lty=4);
+dev.off()
 ########## Fig. S1 - Bifurcation plots ~ Productivity Gradient ====
 SEQ3<-c(1E-3, 2E-3, 3E-3, 4E-3, 5E-3, 6E-3, 7E-3, 8E-3, 9E-3)
 SEQL3<-log10(SEQ3+1)
@@ -376,6 +383,7 @@ lines(log10(S3I_K_PCR_13[which(S3I_K_PCR_13[,1] == S3I_K_LP_13[1]):dim(S3I_K_PCR
 points(log10(S3I_K_LP_13[1]), log10(S3I_K_LP_13[3]), col=rgb(.9,0,0), pch=8, lwd=2);
 abline(v=log10(S3I_K_BP_13[1]), lty=3); abline(v=log10(S3I_K_BPE_13[1]), lty=3); abline(v=log10(S3I_K_LP_13[1]), lty=3);
 
+dev.off()
 ########## Fig. S2 - Bifurcation plots ~ Temperature Gradient ====
 SEQ3<-c(1E-3, 2E-3, 3E-3, 4E-3, 5E-3, 6E-3, 7E-3, 8E-3, 9E-3)
 SEQL3<-log10(SEQ3+1)
@@ -389,7 +397,6 @@ SEQ7<-c(1E-7, 2E-7, 3E-7, 4E-7, 5E-7, 6E-7, 7E-7, 8E-7, 9E-7)
 SEQL7<-log10(SEQ7+1)
 SEQ8<-c(1E-8, 2E-8, 3E-8, 4E-8, 5E-8, 6E-8, 7E-8, 8E-8, 9E-8)
 SEQL8<-log10(SEQ8+1)
-
 
 graphics.off()
 plot.new()
@@ -663,6 +670,7 @@ abline(v=S3I_T_BPE_b[1], lty=3);
 abline(v=S3I_T_BPE_c[1], lty=3);
 abline(v=S3I_T_BPE_d[1], lty=3);
 
+dev.off()
 ########## Fig. S3 - Influence of TPC alone on the trophic chain structure when implemented in a single parameter ====
 # a-d) consumer traits
 # e-f) predator traits
@@ -690,6 +698,7 @@ Graph(BP=S1F_KT_BP, BPE=S1F_KT_BPE, LP=S1F_KT_LP, XX=1, YY=0, ZZ=1, TCOL=4);
 par(mfg=c(2,3), mar = c(3, 2.5, 1.5, 3));
 Graph(BP=S1G_KT_BP, BPE=S1G_KT_BPE, LP=S1G_KT_LP, XX=1, YY=0, ZZ=0, TCOL=4);
 
+dev.off()
 ########## Fig. S4 - Influence of TSR alone on the trophic chain structure when implemented in a single/more traits ====
 # a-c) TSR in a single traits
 # d-f) TSR in two of the three traits
@@ -718,6 +727,7 @@ Graph(BP=S2F_KT_BP, BPE=S2F_KT_BPE, LP=S2F_KT_LP, XX=1, YY=0, ZZ=1, TCOL=6);
 par(mfg=c(2,4), mar = c(3, 2.5, 1.5, 3));
 Graph(BP=S2G_KT_BP, BPE=S2G_KT_BPE, LP=S2G_KT_LP, XX=1, YY=0, ZZ=0, TCOL=6);
 
+dev.off()
 ########## Fig. S5 - 3x3 Combinations of TSR & TPC in species (C alone, P alone, and both species) ====
 par(mfrow=c(3,3)); #To save in portrait, 9*9
 
@@ -751,7 +761,7 @@ Graph(BP=S3H_KT_BP, BPE=S3H_KT_BPE, LP=S3H_KT_LP, XX=1, YY=0, ZZ=1, TCOL=6);
 par(mfg=c(3,3), mar = c(3, 2.5, 1.5, 3));
 Graph(BP=S3I_KT_BP, BPE=S3I_KT_BPE, LP=S3I_KT_LP, XX=1, YY=0, ZZ=0, TCOL=6);
 
-
+dev.off()
 ########## Fig. S6 - Consumer Life histories ====
 SEQ1<-c(1E-1, 2E-1, 3E-1, 4E-1, 5E-1, 6E-1, 7E-1, 8E-1, 9E-1)
 SEQL1<-log10(SEQ1+1)
@@ -839,6 +849,7 @@ lines(S5H_PGR_II[,1], log10(S5H_PGR_II[,2]), type="l", col=rgb(0,0,0), lwd=2, lt
 lines(S5I_PGR_II[,1], log10(S5I_PGR_II[,2]), type="l", col=rgb(0,0,0), lwd=2, lty=2);# L inf
 lines(S5J_PGR_II[,1], log10(S5J_PGR_II[,2]), type="l", col=rgb(0,0,0), lwd=2, lty=3);# L mat + L inf
 
+dev.off()
 ########## Fig. S7 - Consumer biomasses & Birth rate ====
 SEQ1<-c(1E-1, 2E-1, 3E-1, 4E-1, 5E-1, 6E-1, 7E-1, 8E-1, 9E-1)
 SEQL1<-log10(SEQ1+1)
@@ -1294,7 +1305,6 @@ axis(1, at=c(5,15,25), label=T, las=1, cex.axis=1.1);
 axis(2, at=c(log10(SEQ7), log10(SEQ6), log10(SEQ5), log10(SEQ4)), label=F, las=2);
 axis(4, at=c(log10(SEQ7), log10(SEQ6), log10(SEQ5), log10(SEQ4)), label=F, las=2);
 # TSR(Linf)
-lines(# TSR(Linf)[,1], log10(S5C_T_CR_II[,9]), type="l", col=rgb(0,0,0), lwd=2, lty=1);
 lines(S5C_T_PCR_IIa[1:48,1], log10(S5C_T_PCR_IIa[1:48,9]), type="l", col=rgb(.9,0,0), lwd=2, lty=2);# unstable branch
 lines(S5C_T_PCR_IIa[48:dim(S5C_T_PCR_IIa)[1],1], log10(S5C_T_PCR_IIa[48:dim(S5C_T_PCR_IIa)[1],9]), type="l", col=rgb(.9,0,0), lwd=2, lty=1);# stable branch
 points(S5C_T_LPa[1], log10(S5C_T_LPa[9]), col=rgb(.9,0,0), pch=16, lwd=2);
@@ -1372,6 +1382,7 @@ points(S5M_T_BPE_b[1], log10(S5M_T_BPE_b[9]), col=rgb(0,0,0), pch=16, lwd=2);
 points(S5M_T_BPE_c[1], log10(S5M_T_BPE_c[9]), col=rgb(0,0,0), pch=16, lwd=2);
 points(S5M_T_BPE_d[1], log10(S5M_T_BPE_d[9]), col=rgb(0,0,0), pch=16, lwd=2);
 
+dev.off()
 ########## Fig. S8 - cumulative percentages of stage biomasses in CR & PCR states at stable equilibrium ====
 Perc <- function(data, x){(data[,x]/apply(data[,7:9], 1, sum))*100}
 Contrib.perc <- function(x, y){x+y}
@@ -1692,3 +1703,4 @@ lines(S5M_T_PCR_IIa[,1], Contrib.perc3( Perc(S5M_T_PCR_IIa, 7), Perc(S5M_T_PCR_I
 segments(min(S5M_T_PCR_IIa[,1]), 0, min(S5M_T_PCR_IIa[,1]) , 100, lwd=2, lty=3)
 segments(max(S5M_T_PCR_IIa[,1]), 0, max(S5M_T_PCR_IIa[,1]) , 100, lwd=2, lty=3)
 
+dev.off()
