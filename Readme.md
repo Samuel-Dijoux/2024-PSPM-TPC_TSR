@@ -6,8 +6,9 @@
 
 This repository gathers the codes and generated data used in the study: 
 
-Dijoux, S., Smalås, A., Primicerio, R., and Boukal, D. S. (2024). _ Differences in Tri-trophic community response to temperature-dependent vital rates, thermal niche mismatches and temperature-size rule_.
-Manuscript submitted for publication.
+Dijoux, S., Smalås, A., Primicerio, R. and Boukal, D.S. (2024), Differences in Tri-Trophic Community Responses to Temperature-Dependent Vital Rates, Thermal Niche Mismatches and Temperature-Size Rule. Ecology Letters, 27: e70022. [https://doi.org/10.1111/ele.70022].
+
+Published version available on: [Ecology Letters](https://onlinelibrary.wiley.com/doi/10.1111/ele.70022)
 
 Preprint version available on: [Authorea](https://www.authorea.com/users/381268/articles/1212671-tri-trophic-community-responses-to-temperature-dependent-vital-rates-thermal-niche-mismatches-and-temperature-size-rule)
 
